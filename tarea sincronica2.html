@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prueba</h1>
+    <p>
+        Ingrese radio: <input type="text" name="radio" id="radio"><br>
+     
+        <button onclick="agregar();">ingresar</button>
+    </p>
+    <p id="ar"></p>
+    <script type="text/javascript">
+        class Producto{
+            constructor(diametro,perimetro,area){
+                this.valor1=diametro;
+                this.valor2=perimetro;
+                this.valor3=area;
+            }
+            metodoPrint(){
+                let sum="Diametro:"+parseInt((this.valor1)*2)+" <br> Perimetro: "+parseInt((this.valor2)*2*Math.PI)+" <br> Area:"+parseInt((this.valor3)*(this.valor3)*Math.PI);
+                return sum;
+            }
+        }
+
+        function agregar(){
+            let diametro=document.getElementById('radio').value;
+            let perimetro=document.getElementById('radio').value;
+            let area=document.getElementById('radio').value;
+            
+            var ele=new Producto(diametro,perimetro,area);
+            let mostrar=ele.metodoPrint();
+            document.getElementById("ar").innerHTML=mostrar;
+
+        }
+
+    </script>
+</body>
+</html>

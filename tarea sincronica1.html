@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Prueba</h1>
+    <p>
+        valor 1: <input type="text" name="montoBruto" id="montoBruto"><br>
+        <button onclick="agregar();">ingresar</button>
+    </p>
+    <p id="ar"></p>
+    <script type="text/javascript">
+        class Producto{
+            constructor(montoBruto){
+                this.valor1=montoBruto;
+            }
+            metodoPrint(){
+                let iva=parseInt((this.valor1)*1.19)
+                return iva;
+            }
+        }
+
+        function agregar(){
+            let montoBruto = document.getElementById('montoBruto').value;
+            
+            var ele=new Producto(montoBruto);
+            let mostrar=ele.metodoPrint();
+            document.getElementById("ar").innerHTML=mostrar;
+
+        }
+
+    </script>
+</body>
+</html>
